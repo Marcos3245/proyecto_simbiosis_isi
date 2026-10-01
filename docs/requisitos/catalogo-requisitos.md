@@ -279,7 +279,11 @@ FR-017 se conserva para no perder el identificador histórico, pero su estado es
 | ID | Categoría y atributo | Requisito no funcional | Ámbito (Global/Local) | UR/FR relacionados | Método de comprobación | Estado |
 | --- | --- | --- | --- | --- | --- | --- |
 | NFR-07 |NFR-Q (Eficiencia; Escalabilidad; Mantenibilidad) |La plataforma mantendrá los objetivos de capacidad y rendimiento definidos para la primera versión sin intervención manual del personal de la organización.| G | -  | Prueba de carga automatizada con 100 usuarios concurrentes y 10 operaciones/s durante 30 min; comprobar mediante registros de monitorización, ausencia de intervención manual. | - |
-|NFR-001|NFR-Q (Disponibilidad)|La plataforma alcanzará una disponibilidad mínima del 99,5% en cada mes natural|Global||Medida mediante comprobaciones externas cada cinco minutos|A3 s1.1|
+|NFR-001|NFR-Q (Disponibilidad)|La plataforma alcanzará una disponibilidad mínima del 99,5% en cada mes natural|Global|-|Medida mediante comprobaciones externas cada cinco minutos|A3 s1.1|
+|NFR-002|NFR-Q (Integridad; Recuperación)|La plataforma realizará una copia de seguridad diaria de recetas e información de salud|Local|-|Prueba de restauración con un mínimo de una cada 3 meses|ATO s2.2.2|
+|NFR-003|NFR-Q (Seguridad; Integridad)|La plataforma realizará autenticación con OAuth 2.0 u OpenID Connect sobre HTTPS|Local|-|Cuenta de prueba y revisión de configuración de la integración|ATO s.2.3.1|
+|NFR-004|NFR-I ()|La plataforma utilizará únicamente una interfaz web responsiva|Global|-|Revisión de la arquitectura, la configuración del despliegue, las dependencias del cliente y el acceso desde los navegadores compatibles|ATO s.2.5.1 ATO s.2.5.1|
+
 
 Categorías y atributos: 
 1) Requisitos de calidad (NFR-Q): Rendimiento, Usabilidad, Seguridad, Fiabilidad, Disponibilidad, Modificabilidad, Portabilidad, Eficiencia, Escalabilidad, Verificabilidad / Testabilidad, Robustez, Seguridad funcional (safety), Integridad, Reusabilidad, Instalabilidad.
