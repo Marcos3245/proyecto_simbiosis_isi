@@ -268,6 +268,12 @@ enlazar a los términos de esta sección, pero no los definirá de nuevo.
 
 | Término | Definición en Proyecto Simbiosis | Fuente |
 | --- | --- | --- |
+|Nutricionista|Rol profesional acreditado, común para médicos y nutricionistas, que puede publicar y validar recetas|A3 s1.2,1.3 y s3|
+|Acreditación profesional|Procedimiento por el que una persona demuestra su condición profesional para actuar como nutricionista|A3 s.1.3|
+|Receta adaptada|Receta adecuada al perfil, las alergias o las restricciones alimentarias de un paciente. La plataforma no modifica automáticamente sus ingredientes o cantidades|DVA s1.1 y 2.1;A3 s3|
+|Condiciones de salud|Conjunto de síntomas y estado sanitario de un paciente|DVA 1.2|
+|Cuidador|Rol que puede mantener un seguimiento de un paciente|DVA 1.1 y 1.2; ARG 2|
+|Publicaciones de salud|Artículos breves publicados por profesionales sobre alimentación y hábitos de vida saludables relacionados con las personas que conviven con la enfermedad|ARG 5|
 
 ## 10. Modelos de análisis
 
