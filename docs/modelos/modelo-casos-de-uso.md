@@ -2,9 +2,9 @@
 
 | Versión | Fecha | Estado |
 | --- | --- | --- |
-| 1.3 | 05/10/2026 | Plantilla |
+| 1.3 | 05/10/2026 | Borrador |
 
-**Iteración de referencia:** [Indica la última iteración incorporada al modelo.]
+**Iteración de referencia:** E1
 
 Este documento recoge el modelo de casos de uso del proyecto. Se completa a medida que se incorporan funciones. Los diagramas muestran distintas vistas del mismo modelo.
 
@@ -62,7 +62,7 @@ Para cada vista, incluye un título, una frase sobre su alcance y el diagrama. T
 
 ### 4.1 Primera vista
 
-**Título:** [Indica el título de la vista.]
+**Título:** Modelo de casos de uso. Acceso, cuentas, ayuda
 
 **Alcance:** [Explica qué funciones representa esta vista.]
 
