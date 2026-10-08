@@ -30,6 +30,7 @@ Registra los roles externos que participan en las funciones representadas. Un ac
 | --- | --- |
 | Usuario | Persona que interactúa con Proyecto Simbiosis |
 | Usuario registrado | Persona que dispone de una cuenta en la plataforma |
+| Usuario sin registrar | Persona que no dispone de una cuenta en la plataforma |
 
 Mantén los mismos nombres en las tablas, los diagramas y las descripciones.
 
@@ -42,6 +43,10 @@ Registra los casos que aparecen en el modelo. Asigna a cada caso un identificado
 | Identificador | Nombre | Objetivo | Participantes |
 | --- | --- | --- | --- |
 | UC-05 | Actualizar perfil | Actualizar los datos personales y preferencias de la cuenta propia | Actor principal: Usuario registrado. No se identifica actor de apoyo |
+| UC-06 | Registrar perfil | Crear una cuenta con los datos proporcionados | Actor principal: Usuario sin registrar. No se identifica actor de apoyo |
+| UC-07 | Cambiar contraseña | Modificar la contraseña actual | Actor principal: Usuario registrado. No se identifica actor de apoyo |
+| UC-08 | Enviar correo de verificación | Enviar un correo para que el usuario verifique la validez de una acción | Actor principal: Sistema. Actor de apoyo: Gestor de correo electrónico |
+| UC-09 | Verificar identidad | Validar la identidad del usuario para realizar una determinada acción | Actor principal: Usuario |
 
 [Indica los actores que participan. Si procede, distingue el actor principal, que busca alcanzar el objetivo del caso de uso y normalmente inicia la interacción, de los actores de apoyo, que proporcionan servicios o información al sistema.]
 
@@ -100,7 +105,7 @@ En E1 basta con un respaldo breve del diagrama. La tabla permite ampliar la traz
 | Elemento del modelo | UR y FR de referencia | NFR pertinentes | Relación con los requisitos |
 | --- | --- | --- | --- |
 | UC-05 Actualizar perfil | UR-03; FR-019 | NFR-010 GLOBAL | FR-019 permite modificar datos personales y preferencias, pero se excluye alias y correo. NFR-010 condiciona la accesibilidad de esta función |
-
+| UC-06 Registrar perfil | UR-01; FR-01, FR-02, FR-05 | - | FR-01, FR-02, FR-05 indican todos los datos a introducir |
 Consulta el [catálogo canónico](../requisitos/catalogo-requisitos.md) y la [SRS](../requisitos/srs.md). Si falta una condición, indica que está pendiente de aclaración. No la presentes como un requisito confirmado.
 
 ## 6 Descripciones de los casos de uso
