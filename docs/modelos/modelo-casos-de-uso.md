@@ -74,7 +74,6 @@ Los objetivos de esta tabla son resúmenes. Las descripciones detalladas quedan 
 | UC-12 | Introducir datos | Introducir datos fisiológicos y de salud con su longitud máxima permitida | Principal: Paciente |
 | UC-13 | Consultar historial de datos | Revisar datos introducidos por el paciente | Principal: Paciente |
 | UC-14 | Exportar datos | Obtener un documento PDF o CSV con los datos introducidos | Principal: Paciente |
-| UC-15 | Autorizar relación de cuidado | Permitir a un cuidador o nutricionista la revisión de datos del paciente; únicamente de salud. | Principal: Paciente |
 | UC-31 | Aprobar cuenta de cuidador o nutricionista | Aprobar una cuenta solicitada con perfil de cuidador o nutricionista, conforme a las condiciones del perfil. | Principal: Coordinador. |
 | UC-32 | Suspender cuenta de usuario activa | Suspender una cuenta de usuario que se encuentra activa. | Principal: Coordinador. |
 | UC-33 | Eliminar cuenta de usuario | Eliminar una cuenta de usuario y conservar el contenido publicado cuando corresponda a un cuidador. | Principal: Coordinador. |
