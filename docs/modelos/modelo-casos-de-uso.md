@@ -2,9 +2,9 @@
 
 | Versión | Fecha | Estado |
 | --- | --- | --- |
-| 1.6 | 11/10/2026 | Revisado |
+| 1.7 | 15/10/2026 | Borrador |
 
-**Iteración de referencia:** E1. Este documento recoge la primera vista revisada del modelo. Será el punto de partida para ampliarlo en E2.
+**Iteración de referencia:** E2. Este documento recoge la segunda vista revisada del modelo.
 
 **Plantilla base:** [Plantilla del modelo de casos de uso](plantilla-modelo-casos-de-uso.md). La plantilla se conserva sin cumplimentar. Los resultados del proyecto se incorporan a este documento.
 
@@ -28,6 +28,8 @@ El modelo no completa los módulos de Gestión de usuarios y Guía interactiva. 
 - El bloqueo temporal y la expulsión por infracciones.
 - El fin de las relaciones de cuidado y la gestión automática de cuentas de cuidador sin pacientes.
 - Las funciones de salud, recetas, foro, publicaciones y moderación de contenidos.
+
+La vista E2 recoge la gestión de recetas y datos de salud.
 
 Los aplazamientos conservan los requisitos del proyecto. El modelo recoge las funciones seleccionadas para el trabajo de requisitos de E1, aunque algunas queden fuera de su prototipo.
 
@@ -69,6 +71,10 @@ Los objetivos de esta tabla son resúmenes. Las descripciones detalladas quedan 
 | UC-09 | Consultar ayuda | Consultar las instrucciones y los temas de ayuda de las funciones seleccionadas. | Principal: Usuario. |
 | UC-10 | Recorrer bienvenida | Conocer las funciones básicas mediante el recorrido del primer acceso, con la posibilidad de omitirlo. | Principal: Usuario registrado. |
 | UC-11 | Enviar correo electrónico | Enviar el mensaje que necesita el caso de uso que lo incluye. | Apoyo: Servicio de correo electrónico. No se asigna un actor principal independiente. |
+| UC-12 | Introducir datos | Introducir datos fisiológicos y de salud con su longitud máxima permitida | Principal: Paciente |
+| UC-13 | Consultar historial de datos | Revisar datos introducidos por el paciente | Principal: Paciente |
+| UC-14 | Exportar datos | Obtener un documento PDF o CSV con los datos introducidos | Principal: Paciente |
+| UC-15 | Autorizar relación de cuidado | Permitir a un cuidador o nutricionista la revisión de datos del paciente; únicamente de salud. | Principal: Paciente |
 | UC-31 | Aprobar cuenta de cuidador o nutricionista | Aprobar una cuenta solicitada con perfil de cuidador o nutricionista, conforme a las condiciones del perfil. | Principal: Coordinador. |
 | UC-32 | Suspender cuenta de usuario activa | Suspender una cuenta de usuario que se encuentra activa. | Principal: Coordinador. |
 | UC-33 | Eliminar cuenta de usuario | Eliminar una cuenta de usuario y conservar el contenido publicado cuando corresponda a un cuidador. | Principal: Coordinador. |
@@ -108,6 +114,16 @@ UC-34 no incluye UC-35. FR-185 exige auditar las acciones de aprobación, suspen
 La vista no utiliza relaciones de extensión ni generalizaciones entre casos de uso. La bienvenida y la ayuda tienen objetivos propios y se representan por separado.
 
 El inicio de sesión no se incluye en todos los casos protegidos. La comprobación de la contraseña actual al eliminar la cuenta tampoco implica un nuevo inicio de sesión.
+
+### 4.2 Vista de recetas y datos de salud E2
+
+**Frontera del sistema:** Proyecto Simbiosis.
+
+**Alcance:** Publicación y edición de recetas propias, validación de recetas por los nutricionistas y gestión de datos de salud.
+
+![Vista de recetas y datos de salud de E2](imagenes/casos-de-uso-salud-recetas-e2.png)
+
+**Relaciones entre casos de uso.** UC-01 y UC-04 incluyen UC-11. Ambos necesitan enviar un correo para completar el comportamiento previsto. Las flechas de inclusión apuntan desde cada caso base hacia UC-11. La participación del Servicio de correo electrónico se representa mediante su asociación con UC-11.
 
 La imagen se conserva en el repositorio con el nombre usado para esta referencia. Las revisiones de esta vista actualizarán el mismo archivo. Las nuevas vistas tendrán archivos distintos, de acuerdo con la [guía de modelos](README.md).
 
