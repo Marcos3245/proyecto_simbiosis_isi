@@ -223,43 +223,93 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 ### 6.1 Descripción detallada UC-05 — Actualizar perfil
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** UC-05: Actualizar perfil
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** Modificar los datos personales, datos de contacto, y preferencias dietéticas. Se excluyen de la modificación los datos de consulta (alias y correo electrónico).
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** Usuario registrado. No se identifican actores de apoyo.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Precondiciones:** El usuario registrado ya tiene una cuenta activa y una sesión iniciada.
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** El usuario registrado solicita actualizar su perfil.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:**
+1. El usuario registrado solicita actualizar su perfil.
+2. El sistema muestra los datos actuales y distingue entre aquellos que son modificables y los que no lo son.
+3. El usuario registrado introduce los datos que quiere modificar.
+4. El usuario registrado solicita el guardado de sus datos.
+5. El sistema valida los datos introducidos.
+6. El sistema actualiza los datos del usuario registrado en su base de datos.
+7. El sistema muestra un mensaje de confirmación.
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):**
+5.a  No se han introducido el nombre o el teléfono o se han introducido solo espacios
+      1. El sistema notifica del error y solicita que se introduzcan datos válidos.
+      2. Vuelve a 3.
+5.b  El teléfono no sigue las reglas de formato o no se ha introducido el código de área
+      1. El sistema solicita que se introduzca un número de teléfono correcto.
+      2. Vuelve a 3.
+5.c  Existen datos con formato incorrecto
+      1. El sistema encuentra y confirma los campos con formato incorrecto y solicita su cambio.
+      2. Vuelve a 3.
+      
+*.a  El usuario cancela la actualización antes de realizar la solicitud
+      1. El sistema descarta los datos y no modifica los datos del usuario.
+      2. Finaliza el caso de uso.
 
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
+**Postcondiciones:**
+*Con éxito*: El perfil mantiene los datos modificados
+El sistema notifica del cambio
+*Sin éxito*: Los datos del perfil no son modificados
 
-**Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
+**Reglas y NFR pertinentes:** El nombre completo y teléfono no pueden quedar vacíos. El alias y el correo electrónico no se pueden modificar.
 
-**Preguntas abiertas:** [Registra solo las cuestiones necesarias que las fuentes no resuelvan. Si no hay preguntas para el alcance descrito, indícalo.]
+**Preguntas abiertas:** No se requieren preguntas sobre el comportamiento cubierto por el acta.
 
 ### 6.2 Descripción detallada UC-21 — Buscar recetas
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** UC-21: Buscar recetas
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** Localizar recetas que cumplan los criterios del usuario registrado y consultar su detalle.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** Usuario registrado. No se detectan actores de apoyo involucrados.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Precondiciones:** El usuario está registrado. El usuario tiene una sesión iniciada.
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** El usuario solicita buscar recetas.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:**
+1. El usuario solicita buscar recetas.
+2. El sistema solicita al usuario criterios de búsqueda, con un mínimo de uno. Se contemplan búsqueda por ingredientes, por palabra o frase clave y por exclusión de ingredientes.
+3. El usuario introduce un filtro de ingredientes incluidos.
+4. El sistema verifica que todos los criterios pueden aplicarse de forma simultánea.
+5. El sistema busca todas las recetas validadas que verifiquen todos los filtros introducidos.
+6. El sistema muestra las vistas previas de todas las recetas que cumplan los criterios, ordenadas por fecha de publicación con las más recientes primero.
+7. El usuario selecciona una de las recetas válidas.
+8. El sistema devuelve el detalle de la receta seleccionada.
+9. El caso de uso finaliza.
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):**
+3.a. El usuario busca por frase o palabra clave.
+  1. El usuario introduce una frase o palabra clave
+  2. El flujo vuelve al paso 4.
 
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
+3.b. El usuario busca por exclusión de ingredientes.
+  1. El usuario introduce los ingredientes excluidos
+  2. El flujo vuelve al paso 4.
+
+6.a. La búsqueda no tuvo éxito
+  1. El sistema indica que no hay recetas
+  2. El sistema muestra sugerencias de corrección
+  3. El usuario elige una sugerencia
+  4. El sistema corrige los datos y conserva los filtros
+  5. El sistema muestra las nuevas recetas
+  6. 
+**Postcondiciones:**
+*Con éxito*:
+El usuario ha consultado el detalle de alguna receta.
+*Sin éxito*:
+El usuario ha sido informado de la ausencia de recetas o del fallo que impidió que la búsqueda fuera completada.
 
 **Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
 
