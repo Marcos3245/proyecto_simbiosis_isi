@@ -27,9 +27,9 @@ Dividir la búsqueda en tres historias, una por criterio, nos facilita la medici
 
 **Título:** Buscar recetas por ingrediente
 
-Como usuario registrado, quiero poder buscar recetas por ingrediente incluido, para poder obtener un listado de recetas que dispongan de ese ingrediente.
+Como usuario registrado, quiero poder buscar recetas por ingrediente incluido, para poder obtener un listado de recetas que usen ese ingrediente.
 
-**Fuentes:** UR-08; UC-21; FR-86; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-86; acta, Criterios de búsqueda y Búsqueda sin resultados.
 
 ### Criterios de aceptación
 
@@ -41,29 +41,29 @@ Como usuario registrado, quiero poder buscar recetas por ingrediente incluido, p
 
 **Título:** Buscar recetas por palabra o frase clave
 
-Como usuario registrado, quiero buscar recetas por palabra clave, para obtener un listado de recetas que cumplan mis criterios.
+Como usuario registrado, quiero buscar recetas por palabra o frase clave, para obtener un listado de recetas que cumplan mi criterio.
 
-**Fuentes:** UR-08; UC-21; FR-85; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-85; acta, Criterios de búsqueda y Búsqueda sin resultados.
 
 ### Criterios de aceptación
 
 - **CA-01.** Dadas diez recetas que contienen la frase clave "sin gluten", cuando el usuario realiza una búsqueda por la frase clave "sin gluten", entonces el sistema muestra las diez recetas que contienen esta frase.
 - **CA-02.** Dado que no hay recetas con la palabra clave "montaña", cuando el usuario realiza una búsqueda por esta palabra clave, entonces el sistema informa de que no existen recetas con esta palabra clave.
-- **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
+- **CA-03.** Dado que existen recetas con la frase clave "sin sal" y otras que no la contienen, cuando el usuario busca por la frase clave "sin sal", entonces el sistema muestra únicamente aquellas recetas que tienen la frase "sin sal".
 
 ## US-03
 
 **Título:** Buscar recetas por ingrediente excluido
 
-Como usuario registrado, quiero buscar recetas excluyendo ingredientes, para obtener un listado de recetas que no disponen de los ingredientes que no quiero.
+Como usuario registrado, quiero buscar recetas excluyendo ingredientes, para obtener un listado de recetas que no tengan los ingredientes que no quiero usar.
 
-**Fuentes:** UR-08; UC-21; FR-87; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-87; acta, Criterios de búsqueda y Búsqueda sin resultados.
 
 ### Criterios de aceptación
 
 - **CA-01.** Dado que existen en la base de datos cinco recetas que no utilizan el ingrediente "aguacate", cuando el usuario realiza una búsqueda excluyendo este ingrediente, entonces el sistema muestra todas las recetas que existen.
 - **CA-02.** Dado que existen recetas que no contienen ni "aguacate" ni "tomate", cuando el usuario realiza una búsqueda excluyendo estos ingredientes, entonces el sistema muestra todas las recetas que no contienen dichos ingredientes.
-- **CA-03.** Dado que existen una serie de recetas, cuando el usuario realiza una búsqueda incluyendo y excluyendo el mismo ingrediente, entonces el sistema debe informar del error y no realizar la búsqueda.
+- **CA-03.** Dado que arroz está incluido y excluido, cuando el usuario realiza una búsqueda, entonces el sistema debe informar del error y no realizar la búsqueda.
 
 ## Revisión INVEST
 
@@ -71,12 +71,12 @@ La revisión abarca US-01, US-02 y US-03. «Aplicado» indica si se ha realizado
 
 | Criterio | Pregunta de revisión | Aplicado | Cumple | Justificación |
 | --- | --- | --- | --- | --- |
-| Independiente | ¿Puede implementarse cada historia y ofrecer un resultado útil sin implementar antes las otras historias del conjunto? Puede compartir infraestructura con ellas. | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Negociable | ¿Cada historia explica qué necesita la persona y deja margen para discutir los detalles de la solución, respetando los acuerdos confirmados? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Valiosa | ¿La parte «para…» de cada historia explica el beneficio que obtiene la persona al usar esa capacidad? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Estimable | ¿Están claros el alcance y los datos necesarios para estimar el trabajo de cada historia? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Pequeña | ¿Se centra cada historia en una única capacidad de alcance manejable? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Comprobable | ¿Los criterios de aceptación de cada historia describen acciones y resultados observables que permiten distinguir un comportamiento correcto de uno incorrecto? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
+| Independiente | ¿Puede implementarse cada historia y ofrecer un resultado útil sin implementar antes las otras historias del conjunto? Puede compartir infraestructura con ellas. | Sí | Sí | Las historias son independientes y pueden implementarse sin jerarquía; cada una aporta un valor propio. |
+| Negociable | ¿Cada historia explica qué necesita la persona y deja margen para discutir los detalles de la solución, respetando los acuerdos confirmados? | Sí | Sí | En ningún momento se baja a nivel de diseño y únicamente se impone cómo debe comportarse el sistema y no cómo hacerlo |
+| Valiosa | ¿La parte «para…» de cada historia explica el beneficio que obtiene la persona al usar esa capacidad? | Sí | Sí | Cada historia presenta una beneficio único para el usuario y cada funcionalidad de usará de forma independiente aunque puedan cooperar |
+| Estimable | ¿Están claros el alcance y los datos necesarios para estimar el trabajo de cada historia? | Sí | Sí | Los criterios de aceptación y las actas limitan los accesos y los datos posibles |
+| Pequeña | ¿Se centra cada historia en una única capacidad de alcance manejable? | Sí | Sí | Cada historia contempla una funcionalidad única e independiente el resto |
+| Comprobable | ¿Los criterios de aceptación de cada historia describen acciones y resultados observables que permiten distinguir un comportamiento correcto de uno incorrecto? | Sí | Sí | Los criterios permiten comprobar de forma fiable la el correcto funcionamiento de la funcionalidad.  |
 
 ## Dudas pendientes
 
