@@ -15,55 +15,55 @@
 
 ## Épica de búsqueda
 
-Como [rol], quiero [capacidad amplia], para [beneficio].
+Como usuario registrado, quiero buscar recetas en la plataforma mediante diferentes criterios, para gestionar mi dieta y controlar los síntomas de mi enfermedad.
 
 **Estado:** descompuesta en US-01, US-02 y US-03. Conserva la necesidad conjunta.
 
 ## Justificación de la división
 
-[Justificación de los resultados útiles que separa la división.]
+Dividir la búsqueda en tres historias, una por criterio, nos facilita la medición y comprobación de reusltados obtenibles, además de no perder la utilidad para el usuario de forma independiente.
 
 ## US-01
 
-**Título:** [Capacidad]
+**Título:** Buscar recetas por ingrediente
 
-Como [rol], quiero [capacidad], para [beneficio].
+Como usuario registrado, quiero poder buscar recetas por ingrediente incluido, para poder obtener un listado de recetas que dispongan de ese ingrediente.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-86; acta, [apartado pertinente].
 
 ### Criterios de aceptación
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
+- **CA-01.** Dado que existen dos recetas en la base de datos que contienen el ingrediente "zanahoria", cuando el usuario realiza una búsqueda por el ingrediente "zanahoria", entonces el sistema muestra las dos recetas existentes.
+- **CA-02.** Dado que no existen recetas con el ingrediente "grosellas", cuando el usuario realiza una búsqueda con la palabra "grosellas", entonces el sistema indica la inexistencia de recetas con ese ingrediente.
+- **CA-03.** Dado un ingrediente que no existe en la base de datos, cuando el usuario realiza una búsqueda por ese ingrediente, entonces el sistema muestra un error de que no se reconoce el ingrediente.
 
 ## US-02
 
-**Título:** [Capacidad]
+**Título:** Buscar recetas por palabra o frase clave
 
-Como [rol], quiero [capacidad], para [beneficio].
+Como usuario registrado, quiero buscar recetas por palabra clave, para obtener un listado de recetas que cumplan mis criterios.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-85; acta, [apartado pertinente].
 
 ### Criterios de aceptación
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
+- **CA-01.** Dadas diez recetas que contienen la frase clave "sin gluten", cuando el usuario realiza una búsqueda por la frase clave "sin gluten", entonces el sistema muestra las diez recetas que contienen esta frase.
+- **CA-02.** Dado que no hay recetas con la palabra clave "montaña", cuando el usuario realiza una búsqueda por esta palabra clave, entonces el sistema informa de que no existen recetas con esta palabra clave.
 - **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
 
 ## US-03
 
-**Título:** [Capacidad]
+**Título:** Buscar recetas por ingrediente excluido
 
-Como [rol], quiero [capacidad], para [beneficio].
+Como usuario registrado, quiero buscar recetas excluyendo ingredientes, para obtener un listado de recetas que no disponen de los ingredientes que no quiero.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-87; acta, [apartado pertinente].
 
 ### Criterios de aceptación
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
+- **CA-01.** Dado que existen en la base de datos cinco recetas que no utilizan el ingrediente "aguacate", cuando el usuario realiza una búsqueda excluyendo este ingrediente, entonces el sistema muestra todas las recetas que existen.
+- **CA-02.** Dado que existen recetas que no contienen ni "aguacate" ni "tomate", cuando el usuario realiza una búsqueda excluyendo estos ingredientes, entonces el sistema muestra todas las recetas que no contienen dichos ingredientes.
+- **CA-03.** Dado que existen una serie de recetas, cuando el usuario realiza una búsqueda incluyendo y excluyendo el mismo ingrediente, entonces el sistema debe informar del error y no realizar la búsqueda.
 
 ## Revisión INVEST
 
