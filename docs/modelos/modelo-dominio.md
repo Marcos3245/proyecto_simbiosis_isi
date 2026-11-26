@@ -23,6 +23,7 @@ Exporta cada vista trabajada a PNG en `docs/modelos/imagenes/` y añade aquí su
 ### 3.1 Gestión de usuarios
 
 Pendiente. Imagen prevista: `clases-dominio-gestion-usuarios.png`. Fuente principal: acta §2 y acuerdos del apartado 9.
+![Diagrama de clases de gestion](imagenes/clases-dominio-gestion-usuarios.png)
 
 ### 3.2 Gestión de recetas
 
